@@ -46,19 +46,19 @@ if (NODE_ENV === 'development') {
 // CORS setup
 const corsOptions = {
   origin: function (origin, callback) {
-    // Development da barcha originlarga ruxsat
-    if (NODE_ENV === 'development') {
+    const env = process.env.NODE_ENV;
+
+    if (env === 'development') {
       return callback(null, true);
     }
-    
-    // Production da specific domainlarni ruxsat berish
+
     const allowedOrigins = [
       process.env.FRONTEND_URL,
       process.env.BASE_URL,
       'http://localhost:5173',
-      'https://docs-qr-offr.netlify.app/'
+      'https://docs-qr-offr.netlify.app'
     ].filter(Boolean);
-    
+
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -71,6 +71,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // 🔥 OPTIONS method uchun kerak
 
 // Body parser middleware
 app.use(express.json({ 

@@ -23,7 +23,7 @@ const ensureQRDirectory = () => {
  * QR Code uchun scan URL yaratish
  */
 const createScanUrl = (qrId) => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3001';
+  const baseUrl = process.env.BASE_URL;
   return `${baseUrl}/scan/${qrId}`;
 };
 
@@ -192,7 +192,7 @@ const getQRInfo = (qrId) => {
     }
     
     const stats = fs.statSync(qrPath);
-    const baseUrl = process.env.BASE_URL || 'http://localhost:3001';
+    const baseUrl = process.env.BASE_URL;
     
     return {
       qrId,
