@@ -256,13 +256,13 @@ dynamicQRSchema.statics.getContentTypeStats = function() {
 
 // Virtual for scan URL
 dynamicQRSchema.virtual('scanUrl').get(function() {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3001';
+  const baseUrl = process.env.BASE_URL
   return `${baseUrl}/scan/${this.id}`;
 });
 
 // Virtual for QR image URL
 dynamicQRSchema.virtual('qrImageUrl').get(function() {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3001';
+  const baseUrl = process.env.BASE_URL
   return `${baseUrl}/uploads/qrcodes/dynamic_qr_${this.id}.png`;
 });
 
