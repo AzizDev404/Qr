@@ -32,7 +32,7 @@ const createScanUrl = (qrId) => {
  */
 const getQROptions = (customOptions = {}) => {
   return {
-    width: parseInt(process.env.QR_SIZE) || 400,
+    width: parseInt(process.env.QR_SIZE) || 400,    
     margin: parseInt(process.env.QR_MARGIN) || 2,
     color: {
       dark: '#0016d8ff',    // QR code rangi
