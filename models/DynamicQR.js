@@ -256,7 +256,7 @@ dynamicQRSchema.statics.getContentTypeStats = function() {
 
 // Virtual for scan URL
 dynamicQRSchema.virtual('scanUrl').get(function() {
-  const baseUrl = process.env.BASE_URL
+  const baseUrl = process.env.BASE_URL;
   return `${baseUrl}/scan/${this.id}`;
 });
 
