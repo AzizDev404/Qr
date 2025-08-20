@@ -2,6 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
+import { fileURLToPath } from "url";
+
+
+// __dirname olish (ESM bo‘lsa shart)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// uploads papkasini static qilamiz
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 
 // Database connection
 const { connectDB, closeDB } = require('./config/db');
