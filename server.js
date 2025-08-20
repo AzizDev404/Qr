@@ -55,8 +55,8 @@ const corsOptions = {
     const allowedOrigins = [
       process.env.FRONTEND_URL,
       process.env.BASE_URL,
-      'https://yourdomain.com',
-      'https://admin.yourdomain.com'
+      'http://localhost:5173',
+      'https://docs-qr-offr.netlify.app/'
     ].filter(Boolean);
     
     if (!origin || allowedOrigins.includes(origin)) {
