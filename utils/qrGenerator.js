@@ -121,7 +121,7 @@ const generateQRBuffer = async (qrId, format = 'png', customOptions = {}) => {
 const generateStyledQR = async (qrId, style = 'default') => {
   const styles = {
     default: {
-      color: { dark: '#000000', light: '#FFFFFF' }
+      color: { dark: '#1a73e8', light: '#FFFFFF' }
     },
     blue: {
       color: { dark: '#1a73e8', light: '#FFFFFF' }
