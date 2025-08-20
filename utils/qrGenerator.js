@@ -35,7 +35,7 @@ const getQROptions = (customOptions = {}) => {
     width: parseInt(process.env.QR_SIZE) || 400,
     margin: parseInt(process.env.QR_MARGIN) || 2,
     color: {
-      dark: '#000000',    // QR code rangi
+      dark: '#0016d8ff',    // QR code rangi
       light: '#FFFFFF'    // Orqa fon rangi
     },
     errorCorrectionLevel: 'M', // L, M, Q, H (M = Medium)
